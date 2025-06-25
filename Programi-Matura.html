@@ -13,7 +13,36 @@
       padding: 20px;
       background: #f4f4f4;
       font-family: sans-serif;
+      background-image: url('https://raw.githubusercontent.com/Projekt-dot/Website/main/Bibloteka-Background.jpg');
+    backdrop-filter: blur(3px); /* This creates the blur */
+  background-color: rgba(255, 255, 255, 0.7); /* Slightly transparent white */
+      
     }
+    
+    
+    header {
+  position: sticky;
+  padding: 15px 20px;
+  font-size: 24px;
+  z-index: 1000;
+  border-bottom: 1px solid #ccc;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+     text-align: center; /* Centers the text */
+      color: #333;
+      font-size: 2.5em; /* Adjust the title size */
+      margin-bottom: 20px; /* Space between the title and the grid */
+      margin-top: 70px; /* Adds space at the top to prevent the title from being cut off */
+      width: 100%;
+      height: 300px;
+      border-radius: 50px;
+      padding: 30px;
+      font-family: Meie Script;
+      background: linear-gradient(300deg,black,gray,white);
+      animation: gradient-animation 18s ease infinite;
+      color: white;
+      text
+}
+
 
     .grid {
       display: grid;
@@ -98,6 +127,9 @@
   </style>
 </head>
 <body>
+  <header>
+    <h1>Biblioteka Virtuale</h1>
+  </header>
 
 <div class="grid">
  <!-- Book 1 -->
@@ -114,8 +146,7 @@
 
 <!-- Book 2 -->
 <div class="book">
-  <div class="cover" style="background-image: url('https://raw.githubusercontent.com/Projekt-dot/Website/main/Prometeu-Kopertina.jpg
-');"></div>
+  <div class="cover" style="background-image: url('https://raw.githubusercontent.com/Projekt-dot/Website/main/Prometeu-Kopertina.jpg');"></div>
   <div class="pages">
     <div class="page"><div class="page-content"></div></div>
     <div class="page"><div class="page-content"></div></div>
@@ -128,7 +159,7 @@
 
   <!-- Book 3 -->
   <div class="book">
-    <div class="cover"  style="background-image: url('');"></div>
+    <div class="cover"  style="background-image: url('https://raw.githubusercontent.com/Projekt-dot/Website/main/Cikli%20i%20Kreshnikeve-Kopertina.jpg');"></div>
     <div class="pages">
       <div class="page"><div class="page-content"></div></div>
       <div class="page"><div class="page-content"></div></div>
@@ -138,7 +169,7 @@
     </div>
   </div>
    <div class="book">
-     <div class="cover"  style="background-image: url('');"></div>
+     <div class="cover"  style="background-image: url('https://raw.githubusercontent.com/Projekt-dot/Website/main/Metamorfoza-Kopertina.jpg');"></div>
     <div class="pages">
       <div class="page"><div class="page-content"></div></div>
       <div class="page"><div class="page-content"></div></div>
@@ -148,7 +179,7 @@
     </div>
   </div>
    <div class="book">
-     <div class="cover"  style="background-image: url('');"></div>
+     <div class="cover"  style="background-image: url('https://raw.githubusercontent.com/Projekt-dot/Website/main/Iliada-Kopertina.jpg');"></div>
     <div class="pages">
       <div class="page"><div class="page-content"></div></div>
       <div class="page"><div class="page-content"></div></div>
