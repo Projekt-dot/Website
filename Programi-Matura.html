@@ -12,16 +12,22 @@
       margin: 0;
       padding: 20px;
       background: #f4f4f4;
-      font-family: sans-serif;
+      font-family: Calligraphy sans-serif;
       background-image: url('https://raw.githubusercontent.com/Projekt-dot/Website/main/Bibloteka-Background.jpg');
     backdrop-filter: blur(3px); /* This creates the blur */
   background-color: rgba(255, 255, 255, 0.7); /* Slightly transparent white */
       
     }
     
+    p{
+      position: center;
+      text-align: center;
+      font-size: 50px;
+    }
+    
     
     header {
-  position: static ;
+  position: sticky ;
   padding: ;
   font-size: 2px;
   z-index: 10;
@@ -43,11 +49,15 @@
 }
 
 
+
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 10px;
       justify-items: center;
+       margin: 0 auto; /* Center the grid container */
+      max-height: 80vh; /* Set max height for the container to trigger scroll */
+      overflow-y: auto; 
     }
 
     .book {
@@ -115,6 +125,8 @@
       padding: 10px;
       font-size: 14px;
       color: #333;
+      font-family: Calligraphy;
+      text-align: center;
     }
 
     @media (max-width: 500px) {
@@ -123,6 +135,35 @@
         max-width: 140px;
       }
     }
+ .final-book {
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;
+  margin-left: 200px;
+}
+
+.final-style {
+  max-width: 220px;
+  height: 300px;
+  transform: rotateX(3deg);
+  transition: transform 1s ease-in-out;
+}
+
+.final-style .cover {
+  transform: rotateY(-180deg); /* start open */
+}
+
+.final-style:hover .cover {
+  transform: rotateY(0deg); /* close on hover */
+}
+
+.final-style .page:nth-child(1) {
+  transform: rotateY(0deg);
+}
+.final-style:hover .page:nth-child(1) {
+  transform: rotateY(0deg);
+}
+
   </style>
 </head>
 <body>
@@ -218,7 +259,7 @@
     </div>
   </div>
    <div class="book">
-     <div class="cover"  style="background-image: url('');"></div>
+     <div class="cover"  style="background-image: url('https://raw.githubusercontent.com/Projekt-dot/Website/main/Katedralia-Kopertina.jpg');"></div>
     <div class="pages">
       <div class="page"><div class="page-content"></div></div>
       <div class="page"><div class="page-content"></div></div>
@@ -228,7 +269,7 @@
     </div>
   </div>
    <div class="book">
-    <div class="cover"  style="background-image: url('');"></div>
+    <div class="cover"  style="background-image: url('https://raw.githubusercontent.com/Projekt-dot/Website/main/LirikeneShi-Kopertina.jpg');"></div>
     <div class="pages">
       <div class="page"><div class="page-content"></div></div>
       <div class="page"><div class="page-content"></div></div>
@@ -238,7 +279,7 @@
     </div>
   </div>
    <div class="book">
-     <div class="cover"  style="background-image: url('');"></div>
+     <div class="cover"  style="background-image: url('https://raw.githubusercontent.com/Projekt-dot/Website/main/LuletEVeres-Kopertina.jpg');"></div>
     <div class="pages">
       <div class="page"><div class="page-content"></div></div>
       <div class="page"><div class="page-content"></div></div>
@@ -248,7 +289,7 @@
     </div>
   </div>
    <div class="book">
-     <div class="cover"  style="background-image: url('');"></div>
+     <div class="cover"  style="background-image: url('https://raw.githubusercontent.com/Projekt-dot/Website/main/YlliiZemres-Kopertina.jpg');"></div>
     <div class="pages">
       <div class="page"><div class="page-content"></div></div>
       <div class="page"><div class="page-content"></div></div>
@@ -258,7 +299,7 @@
     </div>
   </div>
    <div class="book">
-     <div class="cover"  style="background-image: url('');"></div>
+     <div class="cover"  style="background-image: url('https://raw.githubusercontent.com/Projekt-dot/Website/main/KengeteMilosaos-Kopertina.jpg');"></div>
     <div class="pages">
       <div class="page"><div class="page-content"></div></div>
       <div class="page"><div class="page-content"></div></div>
@@ -268,7 +309,7 @@
     </div>
   </div>
    <div class="book">
-     <div class="cover"  style="background-image: url('');"></div>
+     <div class="cover"  style="background-image: url('https://raw.githubusercontent.com/Projekt-dot/Website/main/Migjeni-Kopertina.jpg');"></div>
     <div class="pages">
       <div class="page"><div class="page-content"></div></div>
       <div class="page"><div class="page-content"></div></div>
@@ -278,7 +319,7 @@
     </div>
   </div>
    <div class="book">
-    <div class="cover"  style="background-image: url('');"></div>
+    <div class="cover"  style="background-image: url('https://raw.githubusercontent.com/Projekt-dot/Website/main/PallatiIEndrrave-Kopertina.jpg');"></div>
     <div class="pages">
       <div class="page"><div class="page-content"></div></div>
       <div class="page"><div class="page-content"></div></div>
@@ -288,17 +329,7 @@
     </div>
   </div>
    <div class="book">
-     <div class="cover"  style="background-image: url('');"></div>
-    <div class="pages">
-      <div class="page"><div class="page-content"></div></div>
-      <div class="page"><div class="page-content"></div></div>
-      <div class="page"><div class="page-content"></div></div>
-      <div class="page"><div class="page-content"></div></div>
-      <div class="page"><div class="page-content"></div></div>
-    </div>
-  </div>
-   <div class="book">
-    <div class="cover"  style="background-image: url('');"></div>
+     <div class="cover"  style="background-image: url('https://raw.githubusercontent.com/Projekt-dot/Website/main/Hamleti-Kopertina.jpg');"></div>
     <div class="pages">
       <div class="page"><div class="page-content"></div></div>
       <div class="page"><div class="page-content"></div></div>
@@ -308,6 +339,36 @@
     </div>
   </div>
 
+</div>
+<div class="final-book">
+  <div class="book final-style">
+    <div class="cover" style="background-color: #660000 ;"><p>Biblioteka</p></div>
+    
+    <div class="pages">
+      <div class="page" style=" background-image: url('https://raw.githubusercontent.com/Projekt-dot/Website/main/Papirus-Biblioteka.jpg');"><div class="page-content">
+        „Pa libra jeta do ishte një hije pa ngjyrë dhe një natë pa yje.“<br>
+         
+         <b>Ismail Kadare</b><br>
+         
+         „Libri është zëri i pavdekshëm që ndriçon errësirën e harresës.“<br>
+        
+        <b>Dritëro Agolli</b><br>
+        
+        „Kur lexoj një libër, përjetoj një jetë të dytë, të pafund.“<br>
+        
+        <b>Lasgush Poradeci</b><br>
+        
+        „Libri është një thesar që askush nuk mund ta vjedhë, sepse është në mendjen tënde.“<br>
+        
+        <b>Pashko Vasa</b><br>
+        
+        
+        
+        
+      </div></div>
+      ...
+    </div>
+  </div>
 </div>
 
 </body>
