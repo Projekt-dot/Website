@@ -12,16 +12,15 @@
       margin: 0;
       padding: 20px;
       background: #f4f4f4;
-      font-family: Calligraphy sans-serif;
+      font-family:; sans-serif;
       background-image: url('https://raw.githubusercontent.com/Projekt-dot/Website/main/Bibloteka-Background.jpg');
     backdrop-filter: blur(3px); /* This creates the blur */
   background-color: rgba(255, 255, 255, 0.7); /* Slightly transparent white */
-      background-size: cover;
+  background-size: cover;
       
     }
     
     p{
-      position: center;
       text-align: center;
       font-size: 50px;
     }
@@ -29,22 +28,18 @@
     
     header {
   position: sticky ;
-  padding: ;
   font-size: 2px;
   z-index: 10;
   border-bottom: 1px solid #ccc;
-  box-shadow: 0 px px rgba(0,0,0,0.1);
+
      text-align: center; /* Centers the text */
       color: #333;
       font-size: 2.5em; /* Adjust the title size */
       margin-bottom: 20px; /* Space between the title and the grid */
-      margin-top: px; /* Adds space at the top to prevent the title from being cut off */
       width: 100%;
       height: 200px;
-      border-radius: px;
       padding: 30px;
       font-family: Meie Script;
-      background: linear-gradient();
       animation: gradient-animation 18s ease infinite;
       color: white;
 }
@@ -136,35 +131,26 @@
         max-width: 140px;
       }
     }
- .final-book {
-  display: flex;
-  justify-content: center;
-  margin-top: 60px;
-  margin-left: 200px;
-}
+  .container {
+ width: 300px;
+    height: 200px;
+    background: #330000;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 25px;
+    }
 
-.final-style {
-  max-width: 220px;
-  height: 300px;
-  transform: rotateX(3deg);
-  transition: transform 1s ease-in-out;
-}
-
-.final-style .cover {
-  transform: rotateY(-180deg); /* start open */
-}
-
-.final-style:hover .cover {
-  transform: rotateY(0deg); /* close on hover */
-}
-
-.final-style .page:nth-child(1) {
-  transform: rotateY(0deg);
-}
-.final-style:hover .page:nth-child(1) {
-  transform: rotateY(0deg);
-}
-
+    .container:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
   </style>
 </head>
 <body>
@@ -341,27 +327,12 @@
   </div>
 
 </div>
-<div class="final-book">
-  <div class="book final-style">
-    <div class="cover" style="background-color: #660000 ;"><p>Biblioteka</p></div>
+<div class="container">
+  <p style="color: white;">FAQJA KRYESORE</p>
+ </div>
     
-    <div class="pages">
-      <div class="page" style=" background-image: url('https://raw.githubusercontent.com/Projekt-dot/Website/main/Papirus-Biblioteka.jpg');"><div class="page-content">
-        „Pa libra jeta do ishte një hije pa ngjyrë dhe një natë pa yje.“<br>
-         
-         <b>Ismail Kadare</b><br>
-         
-         „Libri është zëri i pavdekshëm që ndriçon errësirën e harresës.“<br>
-        
-        <b>Dritëro Agolli</b><br>
-        
-        „Kur lexoj një libër, përjetoj një jetë të dytë, të pafund.“<br>
-        
-        <b>Lasgush Poradeci</b><br>
-        
-        „Libri është një thesar që askush nuk mund ta vjedhë, sepse është në mendjen tënde.“<br>
-        
-        <b>Pashko Vasa</b><br>
+    
+    
         
         
         
