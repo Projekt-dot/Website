@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gjuha Shqipe</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f4f9;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(to right, #5f72be, #9b23ea);
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    header h1 {
+      font-size: 42px;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 18px;
+      opacity: 0.9;
+    }
+
+    nav {
+      background-color: #ffffff;
+      padding: 15px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav a {
+      color: #5f72be;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 6px 12px;
+      border-radius: 4px;
+      transition: background 0.2s ease;
+    }
+
+    nav a:hover {
+      background-color: #f0f0ff;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 30px auto;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .card {
+      background-color: white;
+      padding: 25px;
+      border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+    }
+
+    .card h2 {
+      color: #5f72be;
+      margin-bottom: 12px;
+    }
+
+    .card p {
+      font-size: 16px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #eaeaea;
+      margin-top: 40px;
+      color: #777;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Gjuha Shqipe</h1>
+    <p>Një eksplorim i thelluar në strukturën dhe bukurinë e gjuhës shqipe</p>
+  </header>
+
+  <nav>
+    <a href="#morfologjia">Morfologjia</a>
+    <a href="#sintaksa">Sintaksa</a>
+    <a href="#leksiku">Leksiku</a>
+    <a href="#fonetika">Fonetika</a>
+    <a href="#historia">Historia</a>
+    <a href="#Tekstijoletrar">Teksti joletrar</a>
+    <a href="#Drejtshkrimidhepikesimi">Drejtshkrimi dhe pikësimi</a>
+  </nav>
+
+  <div class="container">
+    <div class="card" id="historia">
+      <h2>Historia e Gjuhës</h2>
+      <p>Gjuha shqipe është ndër më të vjetrat në Evropë, me rrënjë ilire. Ajo ka kaluar nëpër procese evolutive që nga dokumentet e para të shkruara në shek. XV.</p>
+    </div>
+    
+    <div class="card" id="morfologjia">
+      <h2>Morfologjia</h2>
+      <p>Morfologjia studion format gramatikore të fjalëve dhe mënyrën se si ato ndërtohen e ndryshojnë. Kjo përfshin lakimin, zgjedhimin dhe fjalëformimin.</p>
+    </div>
+
+    <div class="card" id="sintaksa">
+      <h2>Sintaksa</h2>
+      <p>Sintaksa analizon ndërtimin e fjalisë dhe marrëdhëniet midis pjesëve të saj. Ajo përcakton rregullat e bashkërendimit të fjalëve në fjalitë shqipe.</p>
+    </div>
+
+    <div class="card" id="leksiku">
+      <h2>Leksiku</h2>
+      <p>Leksiku përfshin fjalorin e gjuhës shqipe. Ai përbëhet nga fjalë vendase dhe huazime, dhe është pasuruar në mënyrë të vazhdueshme nëpër shekuj.</p>
+    </div>
+
+    <div class="card" id="fonetika">
+      <h2>Fonetika</h2>
+      <p>Fonetika shqyrton tingujt e shqipes, artikulimin e tyre dhe ndryshimet fonologjike në dialekte të ndryshme.</p>
+    </div>
+    
+    <div class="card" id="Drejtshkrimidhepikesimi">
+      <h2>Drejtshkrimi dhe pikësimi</h2>
+      <p>Drejtshkrimi është mënyra e saktë e të shkruarit të fjalëve sipas rregullave të gjuhës.
+Pikësimi është përdorimi i shenjave (si pika, presja, pikëpyetja) për të ndarë dhe qartësuar fjalitë.
+Të dy ndihmojnë për të shkruar dhe kuptuar saktë një tekst.
+</p>
+    </div>
+    
+    <div class="card" id="Tekstijoletrar">
+      <h2>Teksti joletrar</h2>
+      <p>Teksti joletrar është një tekst që ka për qëllim të informojë, shpjegojë ose argumentojë, dhe jo të tregojë një histori ose të ngjallë emocione artistike. Ai përdoret zakonisht në lajme, ese, manuale, ligje, raporte shkencore, etj. Ky lloj teksti është i qartë, i saktë dhe i drejtpërdrejtë</p>
+    </div>
+    
+  </div>
+  
+   
+
+  <footer>
+    © 2025 Projekti Gjuha Shqipe | Të gjitha të drejtat e rezervuara.
+  </footer>
+
+</body>
+</html>
