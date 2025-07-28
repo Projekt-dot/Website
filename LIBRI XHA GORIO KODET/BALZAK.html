@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Honoré de Balzak</title>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Oswald', sans-serif;
+      background-color: #550F01;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background: url('https://raw.githubusercontent.com/Projekt-dot/Website/main/LIBRI%20XHA%20GORIO%20FOTOT/BALZAK.jpg') center/cover no-repeat;
+      height: 200px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
+      background-position: center;
+      background-size: cover;
+    }
+
+    header h1 {
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 10px 20px;
+      border-radius: 10px;
+    }
+
+    nav {
+      background-color: #222;
+      padding: 10px 0;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #ffcc00;
+      text-decoration: underline;
+    }
+    
+
+    main {
+      
+      max-width: 1000px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+
+    .card1 {
+      
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+      overflow: hidden;
+      transition: transform 0.3 ease, box-shadow 0.3s ease;
+      
+    }
+    
+    .card1:hover{
+      transform: scale(1.05);
+    }
+    
+
+    .card-header {
+      padding: 20px;
+      cursor: pointer;
+      background-color: white;
+      font-size: 22px;
+      font-weight: bold;
+      border-radius: 12px 12px 0 0;
+    }
+    
+    .card-header1{
+     padding: 20px;
+      cursor: pointer;
+      background-color: #F5DEB3;
+      font-size: 22px;
+      font-weight: bold;
+      border-radius: 12px 12px 0 0;
+    cursor: pointer;
+    transition: transform 0.3 ease, background-color 0.3s ease, color 0.3s ease;
+    }
+    
+    .card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+      overflow: hidden;
+      transition: box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    }
+
+    .card-content {
+      padding: 20px;
+      display: none;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .card.active .card-content {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    footer {
+      background-color: #222;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Honoré de Balzak</h1>
+  </header>
+
+  <nav>
+    <a href="#jeta">Jeta</a>
+    <a href="#epoka">Epoka</a>
+    <a href="#krijimtaria">Krijimtaria</a>
+    <a href="#komedia">Komedia Njerëzore</a>
+  </nav>
+
+  <main>
+    <section class="card" id="jeta">
+      <div class="card-header">Jeta e autorit</div>
+      <div class="card-content">
+        <p><strong>Honore de Balzak</strong>
+ lindi më 20 maj 1799 në Tours, Francë. Ai ishte djali i një familje të pasur, por prindërit e tij, sidomos babai, kishin shumë mundime për të mbajtur nivelin e lartë të jetesës. Balzak u edukua për herë të parë nëpër shkolla fetare, por më pas studionte në universitetin e Parisit. Zgjodhi fillimisht të vazhdonte juridikun, por duke u magjepsur pas ndikimit të letërsisë, vendos të largohet nga universiteti për të ndjekur pasionin e tij.
+<p>Duke u përpjekur të ndërtonte një karrierë si shkrimtar, ai pati një periudhë të vështirë financiare dhe profesionale. Provoi të botojë romane dhe shkrime të tjera, të merrej me disa biznese që dështuan, duke u përballuar kështu me borxhe të mëdha.</p>
+<p>Megjithatë, ai vazhdoi të shkruante dhe të zhvillonte idetë e tij për "Komedia njerëzore"<i>(La Comédie Humaine)</i>, një projekt ambicioz që synonte të jepte një pasqyrë të plotë të jetës njerëzore. Ky cikël i përbërë nga novela dhe romane i jep lexuesit një pamje të thellë të shoqërisë franceze, ku përfshihen fshatarët, aristokratët, borgjezët, dhe ata të varfër, duke ilustruar natyrën njerëzore dhe konflikte sociale, pasiguri, lakmi dhe dashuri.</p>
+<p>
+Balzak kishte një disiplinë të jashtëzakonshme të punës, duke punuar shpesh deri në 18 orë në ditë, dhe duke u përpjekur të përfundonte çdo roman dhe novelë që kishte në mendje. Ai ishte gjithashtu i njohur për ndjekjen e detajeve dhe thellësinë e karaktereve të tij. Për Balzak, shkrimi ishte një angazhim i plotë dhe ai donte që "Komedia njerëzore" të përfaqësonte tërë jetën njerëzore, me anë të një rrëfimi që do të ishte po aq i gjerë dhe kompleks sa vetë shoqëria.
+</p><p>Pavarësisht punës së palodhur dhe pasionit të tij për shkrimin, Balzak pati një jetë të shkurtër. Ai vdiq më 18 gusht 1850, në moshën 51-vjeçare, për shkak të një infarkti. Pas vdekjes, veprat e tij që përfaqësojnë një panoramë të pasur dhe të thellë të jetës sociale dhe politike të Francës së shekullit të XIX, morën vlerësim të madh dhe ndikuan shumë në letërsinë evropiane, veçanërisht në stilin realist që karakterizonte këtë shekull. Shkrimtarët pas tij, përfshirë Gustave Flaubert dhe Marcel Proust, morën ndikim të thellë nga pasuria e veprave të Balzakut.  
+</p>
+      </div>
+    </section>
+
+    <section class="card" id="epoka">
+      <div class="card-header">Epoka</div>
+      <div class="card-content">
+        <p><strong>Epoka</strong> në të cilën ka shkruar Balzak është e shënuar nga pasojat e Revolucionit
+Francez dhe periudhës napoleoniane, duke kaluar në periudhën e
+Restaurimit (1819). Pas rënies së Napoleonit dhe rikthimit të monarkisë së
+Burbonëve, Franca ishte një shoqëri e tensionuar dhe e pasigurt, ku struktura
+klasore kishte kaluar në një fazë të re. Aristokracia kishte humbur fuqinë, ndërsa
+borgjezia, e pasuruar nga Revolucioni, po përpiqej të përvetësonte pushtetin, por
+pa përvojë politike.</p>
+<p>Në këtë periudhë, <b>paraja</b> kishte marrë një rol të madh, duke ndikuar jo vetëm
+në aspektin material, por edhe në moralin dhe sjelljen e individëve. Balzak e
+shihte këtë si një shoqëri të pasigurt dhe të tensionuar, ku përplasja mes pasurisë
+dhe vlerave tradicionale aristokratike krijonte një <b>ankth</b> të thellë.</p>
+<p>Balzak kritikonte se, ndërkohë që shoqëria po përjetonte zhvillime ekonomike,
+ajo po humbiste sensin e vlerave shpirtërore dhe morale. Ai paraqiste një
+shoqëri ku <b>pasuria dhe ambicia</b> po shtynin individët të sakrifikonin virtytet e
+mëparshme për të arritur sukses material. Ky portretizim pasqyron një periudhë
+të turbullt dhe të shkatërruar nga tensionet shoqërore, ku çdo individ ishte i
+lidhur ngushtë me rrethanat politike dhe ekonomike të kohës.
+ </p>
+      </div>
+    </section>
+
+    <section class="card" id="krijimtaria">
+      <div class="card-header">Krijimtaria</div>
+      <div class="card-content">
+         <p><strong>Krijimtaria</strong> e Honoré de Balzakut është një pasqyrë e thellë dhe e gjallë e
+shoqërisë franceze të shekullit XIX, një periudhë e shenjuar nga pasiguria dhe
+përplasje të thella shoqërore. Balzak u bë një nga shkrimtarët më të njohur të
+realizmit të kohës dhe ndoshta më i rëndësishmi në krijimin e një panorame të
+gjerë të jetës sociale dhe politike të periudhës, duke portretizuar gjithçka nga
+aristokracia e vjetër deri tek borgjezia në rritje dhe të gjitha shtresat shoqërore
+në mes.</p>
+<p>Ai nuk shkroi thjesht për të treguar histori, por për <b>të përshkruar dinamikën</b> e
+shoqërisë dhe për të treguar se si individët janë të lidhur me historinë, kulturën
+dhe ekonominë e kohës së tyre. Në krijimtarinë e Balzakut, gjithçka është e
+ndërlidhur – nga sjellja e personazheve te mënyra se si zhvillohen ngjarjet, që të
+gjitha ndodhin për shkak të ndikimit të fuqive shoqërore dhe politike.</p>
+<p>Balzak shikonte <b>shoqërinë si një arenë të luftës</b> mes klasave, ku pasuria dhe
+pushteti ishin ato që kontrollonin gjithçka. Ai kishte një <b>sens të thellë kritik
+ndaj moralit të shoqërisë</b>, duke shfaqur përplasjen mes vlerave të vjetra
+aristokratike dhe moralit të ri borgjez, i cili kishte si synim pasurinë dhe
+suksesin material. Për të, <b>shoqëria ishte e ndarë</b> dhe pa një drejtim të qartë,
+duke u zhvilluar me pasoja të thella për individët që përpiqeshin të përshtateshin
+ose të përfitonin nga ky ndryshim.</p>
+<p>Gjithashtu ai ishte një <b>vëzhgues i mprehtë i jetës shoqërore</b>, gjithmonë
+kishte sy të mprehtë për të kapur ndihmën dhe tensionet mes individëve dhe
+shtresave të ndryshme shoqërore. Ai krijoi një botë komplekse dhe të pasur, ku
+<b>personazhet janë të pajisur me ngjyrime dhe motivime</b> që shprehin më
+shumë se vetëm një tipar të veçantë të karakterit, por reflektojnë tensionet e
+mëdha të kohës.</p>
+<p>Në një kohë kur shoqëria franceze po kalonte nga një periudhë pasigurie në një
+tjetër, Balzak shkruante duke analizuar thellë gjithçka, nga pasuritë e
+grumbulluara nga borgjezia deri te moraliteti i ndryshuar që pasqyronte
+zhvendosjen e vlerave tradicionale. Balzak kërkonte të <b>shpjegonte lidhjen e
+thellë mes individëve dhe epokës ku ata jetonin</b>, duke zbuluar se ata ishin të
+përcaktuar nga rrethanat e kohës së tyre.</p><p>Krijimtaria e Balzakut është një dëshmi e fuqisë së realizmit dhe
+ndjeshmërisë sociale, e cila ka ndikim të jashtëzakonshëm në mënyrën se si ne
+kuptojmë, interpretojmë dhe analizojmë shoqërinë e kohës së tij, dhe, po ashtu,
+përbën një bazë të rëndësishme për shkrimtarët që do të pasonin.</p>
+      </div>
+    </section>
+
+    <a href="Komedianjerezore.html"><section class="card1" id="komedia">
+      </a><div class="card-header1">Komedia Njerëzore
+      <p><strong>Komedia njerëzore</strong> e Honoré de Balzakut është një arritje e jashtëzakonshme e letërsisë botërore, një testament i thellë ndaj natyrës njerëzore. Ky cikël monumental përfshin 91 vepra, të cilat shërbejnë si një pasqyrë e thellë dhe e pakompromis e shoqërisë franceze të shekullit XIX. Çdo vepër tregon historinë e një periudhe, një klase shoqërore, ose një grupi individësh, duke ofruar një reflektim të pasur dhe të detajuar të natyrës njerëzore dhe mekanizmave të shoqërisë.<br></p></a>
+      </div>
+    </section>
+    
+  </main>
+
+  <footer>
+    <p>&copy; 2025 | Faqe dedikuar Honoré de Balzak</p>
+  </footer>
+
+  <script>
+    const cards = document.querySelectorAll(".card");
+
+    cards.forEach(card => {
+      const header = card.querySelector(".card-header");
+      header.addEventListener("click", () => {
+        card.classList.toggle("active");
+      });
+    });
+  </script>
+
+</body>
+</html>
