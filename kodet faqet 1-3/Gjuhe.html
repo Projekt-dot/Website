@@ -35,6 +35,28 @@
       font-size: 18px;
       opacity: 0.9;
     }
+    
+    .back-button {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background-color: #e0e0e0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease;
+  z-index: 999;
+}
+
+.back-button:hover {
+  background-color: #cfcfcf;
+}
+
 
     nav {
       background-color: #ffffff;
@@ -102,6 +124,12 @@
   </style>
 </head>
 <body>
+  <a href="index.html"><button class="back-button" onclick="history.back()">
+  <svg viewBox="0 0 24 24" width="20" height="20" fill="#333">
+    <path d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+  </svg>
+</button></a>
+
 
   <header>
     <h1>Gjuha Shqipe</h1>
