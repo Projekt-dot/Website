@@ -63,6 +63,7 @@ header p {
         }
         nav a:hover {
             text-decoration: underline;
+            color: gold;
         }
         section {
             font-family: Oswald;
@@ -104,9 +105,9 @@ header p {
     display: grid;
     grid-template-columns: repeat(4, 1fr); /* 4 columns, each takes equal space */
     gap: 10px; /* Space between items */
-    width: 95%;
+    width: 100%;
     padding: 20px;
-    height: auto;
+    height: 420px;
     border-radius: 10px;
     position: center;
 }
@@ -117,22 +118,34 @@ header p {
     border-radius: 8px;
     overflow: hidden;
     text-align: center;
+    transition:transform 2 ease;
+}
+
+.vepra:hover{
+  transform: scale(1.05);
 }
 
 .vepra img {
     width: 100%;
-    height: 70%; /* Use 100% to make the image square */
-    object-fit: cover; /* Ensures the image covers the entire container */
+    height: 87%; /* Use 100% to make the image square */
+    background-size: cover; /* Ensures the image covers the entire container */
 }
 
 .vepra h3 {
     margin: 10px 0;
 }
 
+.vepra h3:hover{
+  text-decoration: underline;
+  color: gold;
+}
+
 .vepra p {
     margin: 0;
     padding: 10px;
 }
+
+
     </style>
 </head>
 <body>
@@ -246,7 +259,7 @@ header p {
         <div class="container">
             <div class="vepra">
                 <a href="gobsek.html">
-                    <img src="https://alterabooks.com/wp-content/uploads/2024/11/7789995617631.jpg" alt="Vepra 1">
+                    <img src="https://raw.githubusercontent.com/Projekt-dot/Website/main/LIBRI%20XHA%20GORIO%20FOTOT/FAJDEXHIU-GOBSEK-KOPERTINA.jpg" alt="Vepra 1">
                     </a>
                     <h3>Fajdexhiu Gobsek</h3>
                
@@ -254,7 +267,7 @@ header p {
             </div>
             <div class="vepra">
                 <a href="xhagorio.html">
-                    <img src="https://maturashteterore.com/wp-content/uploads/2020/05/xha-gorioi.jpg" alt="Vepra 2">
+                    <img src="https://raw.githubusercontent.com/Projekt-dot/Website/main/LIBRI%20XHA%20GORIO%20FOTOT/Xha%20Gorio-Kopertina.jpg" alt="Vepra 2">
                     </a>
                     <h3>Xha Gorio</h3>
                
@@ -262,13 +275,13 @@ header p {
             </div>
             <div class="vepra">
                 <a href="iluzionetehumbura.html">
-                    <img src="https://cloudfront.bukinist.al/18266/iluzionet-e-humbura.jpg" alt="Vepra 3">
+                    <img src="https://raw.githubusercontent.com/Projekt-dot/Website/main/LIBRI%20XHA%20GORIO%20FOTOT/ILUZIONET-E-HUMBURA-KOPERTINA.jpg" alt="Vepra 3">
                     </a>
                     <h3>Iluzionet e Humbura</h3>
             </div>
             <div class="vepra">
                 <a href="evgjenigrande.html">
-                    <img src="https://cloudfront.bukinist.al/13108/evgjeni-grande.jpg" alt="Vepra 4">
+                    <img src="https://raw.githubusercontent.com/Projekt-dot/Website/main/LIBRI%20XHA%20GORIO%20FOTOT/EVGJENI-GRANDE-LIBRI.jpg" alt="Vepra 4">
                     </a>
                     <h3>Evgjeni Grande</h3>
             </div>
