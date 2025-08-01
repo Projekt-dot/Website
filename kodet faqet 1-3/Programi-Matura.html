@@ -51,9 +51,11 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  border: none;
   background-color: #e0e0e0;
-  cursor: pointer;
+  color: #333;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bold;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -64,6 +66,7 @@
 .back-button:hover {
   background-color: #cfcfcf;
 }
+
 
     .grid {
       display: grid;
@@ -173,11 +176,8 @@
   </style>
 </head>
 <body>
- <a href="index.html" class="back-button" style="display: inline-flex; align-items: center; justify-content: center;">
-  <svg viewBox="0 0 24 24" width="20" height="20" fill="#333">
-    <path d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
-  </svg>
-</a>
+<a href="index.html" class="back-button">&#8592;</a>
+
 
   <header>
     <h1>Biblioteka Virtuale</h1>
