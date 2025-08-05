@@ -87,6 +87,18 @@
       transition: transform 1s ease-in-out;
       perspective: 1000px;
     }
+    
+    .book-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 20; /* higher than .cover */
+  text-decoration: none;
+  color: inherit;
+}
+
 
     .cover {
       background-size: cover;
@@ -186,7 +198,8 @@
 <div class="grid">
  <!-- Book 1 -->
 <div class="book">
-  <div class="cover" style="background-image: url('https://raw.githubusercontent.com/Projekt-dot/Website/main/fotot%20faqet%201-3/Xha%20Gorio-Kopertina.jpg');"></div>
+  <a href="LIBRI XHA GORIO KODET/BALZAK.html" class="book-link">
+  <div class="cover" style="background-image: url('https://raw.githubusercontent.com/Projekt-dot/Website/main/fotot%20faqet%201-3/Xha%20Gorio-Kopertina.jpg');"></a></div>
   <div class="pages">
     <div class="page"><div class="page-content"></div></div>
     <div class="page"><div class="page-content"></div></div>
@@ -195,6 +208,9 @@
     <div class="page"><div class="page-content"></div></div>
   </div>
 </div>
+
+
+
 
 <!-- Book 2 -->
 <div class="book">
@@ -367,5 +383,3 @@
 
 </body>
 </html>
-
-
