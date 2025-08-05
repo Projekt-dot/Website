@@ -47,6 +47,28 @@ header p {
   font-size: 1.1rem; /* Slightly smaller font size for the paragraph */
 }
 
+.back-button {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #e0e0e0;
+  color: #333;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease;
+  z-index: 999;
+}
+
+.back-button:hover {
+  background-color: #cfcfcf;
+}
               
         nav {
             background-color: #444;
@@ -149,14 +171,14 @@ header p {
     </style>
 </head>
 <body>
-
+<a href="../index.html" class="back-button">&#8592;</a>
 <header>
     <h1>Komedia njerëzore</h1>
     <p>Nga Honoré de Balzak</p>
 </header>
 
 <nav>
-   <a href="webhonoredebalza.html">Honore de Balzak</a>
+   <a href="LIBRI XHA GORIO KODET/BALZAK.html">Honore de Balzak</a>
     <a href="#about">Komedia njerëzore</a>
     <a href="#story">Veçoritë e stilit</a>
     <a href="#legacy">Personazhi tipik</a>
