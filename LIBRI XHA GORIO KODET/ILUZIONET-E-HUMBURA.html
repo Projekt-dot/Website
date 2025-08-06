@@ -45,6 +45,28 @@ header h1 {
 header p {
   font-size: 1.1rem; /* Slightly smaller font size for the paragraph */
 }
+        .back-button {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #e0e0e0;
+  color: #333;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease;
+  z-index: 999;
+}
+
+.back-button:hover {
+  background-color: #cfcfcf;
+}
 
         nav {
             background-color: #444;
@@ -77,7 +99,7 @@ header p {
     </style>
 </head>
 <body>
-
+<a href="KOMEDIANJEREZORE.html" class="back-button">←</a>
 <header>
     <h1>Iluzionet e humbura</h1>
     <p>Roman nga Honoré de Balzak në ciklin "Komedia njerëzore"</p>
