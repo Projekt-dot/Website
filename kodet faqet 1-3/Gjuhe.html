@@ -1,194 +1,358 @@
 <!DOCTYPE html>
 <html lang="sq">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Gjuha Shqipe</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    :root{
+      --accent-1: #5f72be;
+      --accent-2: #9b23ea;
+      --muted: #eaeaea;
+      --card-bg: #ffffff;
+      --nav-bg: #ffffff;
+      --text-color: #222;
+      --body-bg: #f4f4f9;
+      --max-width: 1200px;
+      --toggle-bg: rgba(0,0,0,0.7);
+      --toggle-foreground: #fff;
     }
 
+    /* system dark preference */
+    @media (prefers-color-scheme: dark) {
+      :root{
+        --card-bg: #121217;
+        --nav-bg: #0f0f13;
+        --text-color: #e7e7ea;
+        --body-bg: #0b0b0d;
+        --toggle-bg: rgba(255,255,255,0.08);
+        --toggle-foreground: #fff;
+      }
+    }
+
+    /* classes to override (user choice) */
+    body.dark-mode {
+      --card-bg: #121217;
+      --nav-bg: #0f0f13;
+      --text-color: #e7e7ea;
+      --body-bg: #0b0b0d;
+      --toggle-bg: rgba(255,255,255,0.08);
+      --toggle-foreground: #fff;
+    }
+    body.light-mode {
+      --card-bg: #ffffff;
+      --nav-bg: #ffffff;
+      --text-color: #222;
+      --body-bg: #f4f4f9;
+      --toggle-bg: rgba(0,0,0,0.7);
+      --toggle-foreground: #fff;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html,body { height: 100%; }
+
     body {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #f4f4f9;
-      color: #333;
+      font-family: 'Segoe UI', system-ui, -apple-system, "Helvetica Neue", Arial;
+      background-color: var(--body-bg);
+      color: var(--text-color);
       line-height: 1.6;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      transition: background 0.25s ease, color 0.25s ease;
     }
 
     /* BACK BUTTON FIXED */
     .back-box {
       position: fixed;
-      top: 15px;
-      left: 15px;
-      width: 42px;
-      height: 42px;
+      top: 14px;
+      left: 14px;
+      width: 46px;
+      height: 46px;
       background-color: #e0e0e0;
-      border-radius: 8px;
+      border-radius: 10px;
       display: flex;
       align-items: center;
       justify-content: center;
       text-decoration: none;
       color: #333;
       font-size: 22px;
-      font-weight: bold;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-      transition: background-color 0.2s ease;
-      z-index: 1000;
+      font-weight: 700;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.18);
+      transition: background-color 0.18s ease, transform 0.12s ease;
+      z-index: 1200;
     }
+    .back-box:hover { background-color: #d4d4d4; transform: translateY(-1px); }
+    .back-box:active { transform: translateY(0); }
+    .back-box:focus-visible { outline: 3px solid rgba(95,114,190,0.25); outline-offset: 3px; }
 
-    .back-box:hover {
-      background-color: #ccc;
-    }
-
+    /* HEADER */
     header {
-      background: linear-gradient(to right, #5f72be, #9b23ea);
+      background: linear-gradient(90deg, var(--accent-1), var(--accent-2));
       color: white;
       padding: 40px 20px;
       text-align: center;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.12);
     }
-
     header h1 {
-      font-size: 42px;
-      margin-bottom: 10px;
+      font-size: clamp(26px, 5.5vw, 42px);
+      margin-bottom: 8px;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
     }
-
     header p {
-      font-size: 18px;
-      opacity: 0.9;
+      font-size: clamp(13px, 2.4vw, 18px);
+      opacity: 0.95;
     }
 
+    /* NAV */
     nav {
-      background-color: #ffffff;
-      padding: 15px;
+      background-color: var(--nav-bg);
+      padding: 12px 14px;
       display: flex;
-      justify-content: center;
-      gap: 20px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      gap: 14px;
+      align-items: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
       position: sticky;
       top: 0;
-      z-index: 100;
+      z-index: 110;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: thin;
+      justify-content: center;
     }
-
+    nav::-webkit-scrollbar { height: 8px; }
     nav a {
-      color: #5f72be;
+      color: var(--accent-1);
       text-decoration: none;
-      font-weight: bold;
-      padding: 6px 12px;
-      border-radius: 4px;
-      transition: background 0.2s ease;
+      font-weight: 700;
+      padding: 8px 12px;
+      border-radius: 8px;
+      transition: background 0.18s ease, color 0.18s ease;
+      white-space: nowrap;
+      flex: 0 0 auto;
+      font-size: 14px;
     }
+    nav a:hover { background-color: #f6f6ff; }
+    nav a:focus-visible { outline: 3px solid rgba(95,114,190,0.18); outline-offset: 2px; }
 
-    nav a:hover {
-      background-color: #f0f0ff;
-    }
-
+    /* CONTAINER GRID */
     .container {
-      max-width: 1200px;
+      max-width: var(--max-width);
       margin: 30px auto;
       padding: 0 20px;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 26px;
+      grid-auto-flow: row; /* keep HTML order */
     }
 
     .card {
-      background-color: white;
-      padding: 25px;
-      border-radius: 16px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      background-color: var(--card-bg);
+      padding: 22px;
+      border-radius: 14px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      transition: transform 0.26s ease, box-shadow 0.26s ease, background 0.25s ease;
+      overflow-wrap: anywhere;
+      color: var(--text-color);
     }
-
     .card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+      transform: translateY(-6px);
+      box-shadow: 0 14px 34px rgba(0,0,0,0.12);
     }
-
     .card h2 {
-      color: #5f72be;
-      margin-bottom: 12px;
+      color: var(--accent-1);
+      margin-bottom: 10px;
+      font-size: clamp(16px, 2.2vw, 20px);
     }
-
-    .card p {
-      font-size: 16px;
-    }
+    .card p { font-size: 15px; color: var(--text-color); }
 
     footer {
       text-align: center;
-      padding: 20px;
-      background-color: #eaeaea;
+      padding: 18px;
+      background-color: var(--muted);
       margin-top: 40px;
-      color: #777;
+      color: #666;
+      font-size: 14px;
     }
+
+    /* Small screen tweaks */
+    @media (max-width: 900px) {
+      .container { gap: 20px; padding: 0 16px; }
+      nav { padding: 10px 12px; gap: 10px; }
+    }
+
+    @media (max-width: 600px) {
+      header { padding: 20px 14px; }
+      header h1 { font-size: clamp(20px, 8vw, 32px); }
+      header p { font-size: 13px; }
+      .back-box { width: 40px; height: 40px; font-size: 20px; left: 10px; top: 10px; }
+      nav { justify-content: flex-start; gap: 10px; }
+      .container {
+        display: flex;
+        flex-direction: column; /* ensures exact order as HTML */
+        margin: 20px auto;
+        gap: 16px;
+        padding: 0 12px;
+      }
+      .card { padding: 16px; border-radius: 12px; }
+      .card h2 { margin-bottom: 8px; }
+      footer { padding: 16px; font-size: 13px; }
+    }
+
+    @media (max-width: 380px) {
+      nav a { font-size: 13px; padding: 7px 10px; border-radius: 8px; }
+      .back-box { width: 36px; height: 36px; font-size: 18px; }
+      .container { gap: 14px; padding: 0 10px; }
+    }
+
+    /* Floating dark toggle (small, unobtrusive) */
+    #darkToggle {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 1400;
+      width: 48px;
+      height: 48px;
+      border-radius: 999px;
+      border: none;
+      display: grid;
+      place-items: center;
+      background: var(--toggle-bg);
+      color: var(--toggle-foreground);
+      cursor: pointer;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+      transition: transform 0.15s ease, background 0.2s ease;
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+    }
+    #darkToggle:hover { transform: translateY(-4px); }
+    #darkToggle:focus-visible { outline: 2px solid rgba(255,255,255,0.12); outline-offset: 3px; }
   </style>
 </head>
 <body>
 
   <!-- BACK BUTTON -->
-  <a href="../index.html" class="back-box">&#8592;</a>
+  <a href="../index.html" class="back-box" aria-label="Kthehu mbrapa">&#8592;</a>
 
   <header>
     <h1>Gjuha Shqipe</h1>
     <p>Një eksplorim i thelluar në strukturën dhe bukurinë e gjuhës shqipe</p>
   </header>
 
-  <nav>
+  <nav aria-label="Navigimi kryesor">
     <a href="#morfologjia">Morfologjia</a>
     <a href="#sintaksa">Sintaksa</a>
     <a href="#leksiku">Leksiku</a>
     <a href="#fonetika">Fonetika</a>
     <a href="#historia">Historia</a>
     <a href="#Tekstijoletrar">Teksti joletrar</a>
-    <a href="#Drejtshkrimidhepikesimi">Drejtshkrimi dhe pikësimi</a>
+    <a href="#Drejtshkrimidhepikesimi">Drejtshkrim & pikësim</a>
   </nav>
 
-  <div class="container">
-    <div class="card" id="historia">
-      <h2>Historia e Gjuhës</h2>
-      <p>Gjuha shqipe është ndër më të vjetrat në Evropë, me rrënjë ilire. Ajo ka kaluar nëpër procese evolutive që nga dokumentet e para të shkruara në shek. XV.</p>
-    </div>
-
-    <div class="card" id="morfologjia">
-      <h2>Morfologjia</h2>
+  <main class="container" role="main">
+    <article class="card" id="morfologjia" aria-labelledby="morfologjia-title">
+      <h2 id="morfologjia-title">Morfologjia</h2>
       <p>Morfologjia studion format gramatikore të fjalëve dhe mënyrën se si ato ndërtohen e ndryshojnë. Kjo përfshin lakimin, zgjedhimin dhe fjalëformimin.</p>
-    </div>
+    </article>
 
-    <div class="card" id="sintaksa">
-      <h2>Sintaksa</h2>
+    <article class="card" id="sintaksa" aria-labelledby="sintaksa-title">
+      <h2 id="sintaksa-title">Sintaksa</h2>
       <p>Sintaksa analizon ndërtimin e fjalisë dhe marrëdhëniet midis pjesëve të saj. Ajo përcakton rregullat e bashkërendimit të fjalëve në fjalitë shqipe.</p>
-    </div>
+    </article>
 
-    <div class="card" id="leksiku">
-      <h2>Leksiku</h2>
+    <article class="card" id="leksiku" aria-labelledby="leksiku-title">
+      <h2 id="leksiku-title">Leksiku</h2>
       <p>Leksiku përfshin fjalorin e gjuhës shqipe. Ai përbëhet nga fjalë vendase dhe huazime, dhe është pasuruar në mënyrë të vazhdueshme nëpër shekuj.</p>
-    </div>
+    </article>
 
-    <div class="card" id="fonetika">
-      <h2>Fonetika</h2>
+    <article class="card" id="fonetika" aria-labelledby="fonetika-title">
+      <h2 id="fonetika-title">Fonetika</h2>
       <p>Fonetika shqyrton tingujt e shqipes, artikulimin e tyre dhe ndryshimet fonologjike në dialekte të ndryshme.</p>
-    </div>
+    </article>
 
-    <div class="card" id="Drejtshkrimidhepikesimi">
-      <h2>Drejtshkrimi dhe pikësimi</h2>
-      <p>Drejtshkrimi është mënyra e saktë e të shkruarit të fjalëve sipas rregullave të gjuhës.
-      Pikësimi është përdorimi i shenjave (si pika, presja, pikëpyetja) për të ndarë dhe qartësuar fjalitë.
-      Të dy ndihmojnë për të shkruar dhe kuptuar saktë një tekst.</p>
-    </div>
+    <article class="card" id="historia" aria-labelledby="historia-title">
+      <h2 id="historia-title">Historia e Gjuhës</h2>
+      <p>Gjuha shqipe është ndër më të vjetrat në Evropë, me rrënjë ilire. Ajo ka kaluar nëpër procese evolutive që nga dokumentet e para të shkruara në shek. XV.</p>
+    </article>
 
-    <div class="card" id="Tekstijoletrar">
-      <h2>Teksti joletrar</h2>
-      <p>Teksti joletrar është një tekst që ka për qëllim të informojë, shpjegojë ose argumentojë, dhe jo të tregojë një histori ose të ngjallë emocione artistike. 
-      Ai përdoret zakonisht në lajme, ese, manuale, ligje, raporte shkencore, etj. Ky lloj teksti është i qartë, i saktë dhe i drejtpërdrejtë</p>
-    </div>
-  </div>
+    <article class="card" id="Tekstijoletrar" aria-labelledby="tekst-title">
+      <h2 id="tekst-title">Teksti joletrar</h2>
+      <p>Teksti joletrar është një tekst që ka për qëllim të informojë, shpjegojë ose argumentojë, dhe jo të tregojë një histori ose të ngjallë emocione artistike. Ai përdoret zakonisht në lajme, ese, manuale, ligje, raporte shkencore, etj.</p>
+    </article>
+
+    <article class="card" id="Drejtshkrimidhepikesimi" aria-labelledby="drejt-title">
+      <h2 id="drejt-title">Drejtshkrimi dhe pikësimi</h2>
+      <p>Drejtshkrimi është mënyra e saktë e të shkruarit të fjalëve sipas rregullave të gjuhës. Pikësimi është përdorimi i shenjave (si pika, presja, pikëpyetja) për të ndarë dhe qartësuar fjalitë.</p>
+    </article>
+  </main>
 
   <footer>
     © 2025 Projekti Gjuha Shqipe | Të gjitha të drejtat e rezervuara.
   </footer>
 
+  <!-- Floating dark mode toggle -->
+  <button id="darkToggle" aria-label="Ndrysho modalitetin dritë/errësirë" title="Toggle dark mode">🌙</button>
+
+  <script>
+    // Dark Mode Detection + Toggle + remember in localStorage
+    const toggleBtn = document.getElementById('darkToggle');
+    const savedTheme = localStorage.getItem('theme'); // 'dark-mode' or 'light-mode'
+
+    function applyTheme(themeClass) {
+      document.body.classList.remove('dark-mode', 'light-mode');
+      if (themeClass) document.body.classList.add(themeClass);
+      updateToggleIcon();
+    }
+
+    // update floating button icon depending on current theme
+    function updateToggleIcon() {
+      const isDark = document.body.classList.contains('dark-mode') ||
+        (!document.body.classList.contains('light-mode') && window.matchMedia('(prefers-color-scheme: dark)').matches && !localStorage.getItem('theme'));
+      // if explicit light-mode is set, isDark false
+      toggleBtn.textContent = isDark ? '☀️' : '🌙';
+    }
+
+    // Initial load: saved preference overrides system preference
+    if (savedTheme === 'dark-mode' || savedTheme === 'light-mode') {
+      applyTheme(savedTheme);
+    } else {
+      // no saved preference -> follow system
+      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        applyTheme('dark-mode');
+      } else {
+        applyTheme('light-mode');
+      }
+    }
+
+    // Listen for system preference changes (only if user hasn't chosen)
+    if (!savedTheme && window.matchMedia) {
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+        applyTheme(e.matches ? 'dark-mode' : 'light-mode');
+      });
+    }
+
+    // Toggle on click (and save user preference)
+    toggleBtn.addEventListener('click', () => {
+      if (document.body.classList.contains('dark-mode')) {
+        applyTheme('light-mode');
+        localStorage.setItem('theme', 'light-mode');
+      } else {
+        applyTheme('dark-mode');
+        localStorage.setItem('theme', 'dark-mode');
+      }
+    });
+
+    // Accessibility: allow toggle with keyboard (Enter/Space)
+    toggleBtn.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        toggleBtn.click();
+      }
+    });
+
+    // Optional: update toggle icon on page load (safety)
+    updateToggleIcon();
+  </script>
 </body>
 </html>
