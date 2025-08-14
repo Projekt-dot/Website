@@ -8,6 +8,8 @@
     :root{
       --accent-1: #5f72be;
       --accent-2: #9b23ea;
+      --accent-3: #91b5f2;
+      --accent-4: #d091f2;
       --muted: #eaeaea;
       --card-bg: #ffffff;
       --nav-bg: #ffffff;
@@ -17,8 +19,6 @@
       --toggle-bg: rgba(0,0,0,0.7);
       --toggle-foreground: #fff;
     }
-
-    /* system dark preference */
     @media (prefers-color-scheme: dark) {
       :root{
         --card-bg: #121217;
@@ -29,8 +29,6 @@
         --toggle-foreground: #fff;
       }
     }
-
-    /* classes to override (user choice) */
     body.dark-mode {
       --card-bg: #121217;
       --nav-bg: #0f0f13;
@@ -47,11 +45,8 @@
       --toggle-bg: rgba(0,0,0,0.7);
       --toggle-foreground: #fff;
     }
-
     * { margin: 0; padding: 0; box-sizing: border-box; }
-
     html,body { height: 100%; }
-
     body {
       font-family: 'Segoe UI', system-ui, -apple-system, "Helvetica Neue", Arial;
       background-color: var(--body-bg);
@@ -61,178 +56,109 @@
       -moz-osx-font-smoothing:grayscale;
       transition: background 0.25s ease, color 0.25s ease;
     }
+a {
+  color: #000000;
+  text-decoration: none; /* optional: remove underline */
+}
 
-    /* BACK BUTTON FIXED */
-    .back-box {
-      position: fixed;
-      top: 14px;
-      left: 14px;
-      width: 46px;
-      height: 46px;
-      background-color: #e0e0e0;
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-decoration: none;
-      color: #333;
-      font-size: 22px;
-      font-weight: 700;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.18);
-      transition: background-color 0.18s ease, transform 0.12s ease;
-      z-index: 1200;
-    }
-    .back-box:hover { background-color: #d4d4d4; transform: translateY(-1px); }
-    .back-box:active { transform: translateY(0); }
-    .back-box:focus-visible { outline: 3px solid rgba(95,114,190,0.25); outline-offset: 3px; }
+a:hover {
+  color: #5f72be; /* hover effect */
+}
+.card {
+  display: flex;
+  flex-direction: column;
+}
+.card h2 {
+  align-self: center; /* e qendron vetëm titullin pa prekur elementet e tjera */
+  text-align: center;
+  margin-bottom: 10px;
+}
+    /* BACK BUTTON */
+    .back-box { position: fixed; top: 14px; left: 14px; width: 46px; height: 46px;
+      background-color: #e0e0e0; border-radius: 10px; display:flex; align-items:center;
+      justify-content:center; text-decoration:none; color:#333; font-size:22px; font-weight:700;
+      box-shadow:0 3px 8px rgba(0,0,0,0.18); transition: background-color .18s, transform .12s; z-index:1200; }
+    .back-box:hover{ background-color:#d4d4d4; transform:translateY(-1px); }
+    .back-box:focus-visible{ outline:3px solid rgba(95,114,190,0.25); outline-offset:3px; }
 
     /* HEADER */
-    header {
-      background: linear-gradient(90deg, var(--accent-1), var(--accent-2));
-      color: white;
-      padding: 40px 20px;
-      text-align: center;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.12);
-    }
-    header h1 {
-      font-size: clamp(26px, 5.5vw, 42px);
-      margin-bottom: 8px;
-      line-height: 1.05;
-      letter-spacing: -0.02em;
-    }
-    header p {
-      font-size: clamp(13px, 2.4vw, 18px);
-      opacity: 0.95;
-    }
+    header { background: linear-gradient(90deg,var(--accent-1),var(--accent-2)); color:#fff;
+      padding:40px 20px; text-align:center; box-shadow:0 4px 12px rgba(0,0,0,.12); }
+    header h1{ font-size:clamp(26px,5.5vw,42px); margin-bottom:8px; line-height:1.05; }
+    header p{ font-size:clamp(13px,2.4vw,18px); opacity:.95; }
 
     /* NAV */
     nav {
-      background-color: var(--nav-bg);
-      padding: 12px 14px;
-      display: flex;
-      gap: 14px;
-      align-items: center;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-      position: sticky;
-      top: 0;
-      z-index: 110;
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
-      scrollbar-width: thin;
-      justify-content: center;
+      background-color:var(--nav-bg); padding:12px 14px; display:flex; gap:14px; align-items:center;
+      box-shadow:0 2px 6px rgba(0,0,0,.08); position:sticky; top:0; z-index:110; overflow-x:auto;
+      -webkit-overflow-scrolling:touch; scrollbar-width:thin; justify-content:center;
     }
-    nav::-webkit-scrollbar { height: 8px; }
-    nav a {
-      color: var(--accent-1);
-      text-decoration: none;
-      font-weight: 700;
-      padding: 8px 12px;
-      border-radius: 8px;
-      transition: background 0.18s ease, color 0.18s ease;
-      white-space: nowrap;
-      flex: 0 0 auto;
-      font-size: 14px;
-    }
-    nav a:hover { background-color: #f6f6ff; }
-    nav a:focus-visible { outline: 3px solid rgba(95,114,190,0.18); outline-offset: 2px; }
+    nav a{ color:var(--accent-1); text-decoration:none; font-weight:700; padding:8px 12px; border-radius:8px;
+      transition:background .18s; white-space:nowrap; flex:0 0 auto; font-size:14px; }
+    nav a:hover{ background:#f6f6ff; }
+    nav a:focus-visible{ outline:3px solid rgba(95,114,190,0.18); outline-offset:2px; }
 
-    /* CONTAINER GRID */
-    .container {
-      max-width: var(--max-width);
-      margin: 30px auto;
-      padding: 0 20px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 26px;
-      grid-auto-flow: row; /* keep HTML order */
-    }
-
+    /* GRID */
+    .container { max-width:var(--max-width); margin:30px auto; padding:0 20px;
+      display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:26px; grid-auto-flow:row; }
     .card {
-      background-color: var(--card-bg);
-      padding: 22px;
-      border-radius: 14px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-      transition: transform 0.26s ease, box-shadow 0.26s ease, background 0.25s ease;
-      overflow-wrap: anywhere;
-      color: var(--text-color);
+      background:var(--card-bg); padding:22px; border-radius:14px; box-shadow:0 8px 20px rgba(0,0,0,.08);
+      transition:transform .26s, box-shadow .26s, background .25s; overflow-wrap:anywhere; color:var(--text-color);
+      cursor:pointer; user-select:none;
     }
-    .card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 14px 34px rgba(0,0,0,0.12);
-    }
-    .card h2 {
-      color: var(--accent-1);
-      margin-bottom: 10px;
-      font-size: clamp(16px, 2.2vw, 20px);
-    }
-    .card p { font-size: 15px; color: var(--text-color); }
+    .card:hover{ transform:translateY(-6px); box-shadow:0 14px 34px rgba(0,0,0,.12); }
+    .card h2{ color:var(--accent-1); margin-bottom:10px; font-size:clamp(16px,2.2vw,20px); }
+    .card p{ font-size:15px; color:var(--text-color); }
 
-    footer {
-      text-align: center;
-      padding: 18px;
-      background-color: var(--muted);
-      margin-top: 40px;
-      color: #666;
-      font-size: 14px;
-    }
+    footer{ text-align:center; padding:18px; background:var(--muted); margin-top:40px; color:#666; font-size:14px; }
 
-    /* Small screen tweaks */
-    @media (max-width: 900px) {
-      .container { gap: 20px; padding: 0 16px; }
-      nav { padding: 10px 12px; gap: 10px; }
+    @media (max-width:900px){ .container{ gap:20px; padding:0 16px } nav{ padding:10px 12px; gap:10px } }
+    @media (max-width:600px){
+      header{ padding:20px 14px } header h1{ font-size:clamp(20px,8vw,32px) } header p{ font-size:13px }
+      .back-box{ width:40px; height:40px; font-size:20px; left:10px; top:10px }
+      nav{ justify-content:flex-start; gap:10px }
+      .container{ display:flex; flex-direction:column; margin:20px auto; gap:16px; padding:0 12px }
+      .card{ padding:16px; border-radius:12px } .card h2{ margin-bottom:8px } footer{ padding:16px; font-size:13px }
     }
+    @media (max-width:380px){ nav a{ font-size:13px; padding:7px 10px } .back-box{ width:36px; height:36px; font-size:18px }
+      .container{ gap:14px; padding:0 10px } }
 
-    @media (max-width: 600px) {
-      header { padding: 20px 14px; }
-      header h1 { font-size: clamp(20px, 8vw, 32px); }
-      header p { font-size: 13px; }
-      .back-box { width: 40px; height: 40px; font-size: 20px; left: 10px; top: 10px; }
-      nav { justify-content: flex-start; gap: 10px; }
-      .container {
-        display: flex;
-        flex-direction: column; /* ensures exact order as HTML */
-        margin: 20px auto;
-        gap: 16px;
-        padding: 0 12px;
-      }
-      .card { padding: 16px; border-radius: 12px; }
-      .card h2 { margin-bottom: 8px; }
-      footer { padding: 16px; font-size: 13px; }
-    }
+    /* dark toggle */
+    #darkToggle{ position:fixed; right:18px; bottom:18px; z-index:1400; width:48px; height:48px; border-radius:999px;
+      border:none; display:grid; place-items:center; background:var(--toggle-bg); color:var(--toggle-foreground);
+      cursor:pointer; box-shadow:0 6px 18px rgba(0,0,0,.15); transition:transform .15s, background .2s; backdrop-filter:blur(4px);
+      -webkit-backdrop-filter:blur(4px); }
+    #darkToggle:hover{ transform:translateY(-4px) } #darkToggle:focus-visible{ outline:2px solid rgba(255,255,255,.12); outline-offset:3px }
 
-    @media (max-width: 380px) {
-      nav a { font-size: 13px; padding: 7px 10px; border-radius: 8px; }
-      .back-box { width: 36px; height: 36px; font-size: 18px; }
-      .container { gap: 14px; padding: 0 10px; }
-    }
+    /* MODAL */
+    #modalBackdrop { position:fixed; inset:0; background:rgba(0,0,0,.5); backdrop-filter:blur(3px);
+      -webkit-backdrop-filter:blur(3px); z-index:1500; display:none; justify-content:center; align-items:center; }
+    #modalBox {
+  background: linear-gradient(135deg, var(--accent-3), var(--accent-4)), var(--card-bg);
+  border-radius: 14px;
+  max-width: 680px;
+  width: 92%;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 12px 34px rgba(0,0,0,.25);
+  padding: 24px 32px 32px 32px;
+  position: relative;
+  font-size: 16px;
+  line-height: 1.5;
+  user-select: text;
+}
+    /* read-only content area */
+    #modalContent { margin-top:12px; white-space:pre-wrap; color:inherit; }
 
-    /* Floating dark toggle (small, unobtrusive) */
-    #darkToggle {
-      position: fixed;
-      right: 18px;
-      bottom: 18px;
-      z-index: 1400;
-      width: 48px;
-      height: 48px;
-      border-radius: 999px;
-      border: none;
-      display: grid;
-      place-items: center;
-      background: var(--toggle-bg);
-      color: var(--toggle-foreground);
-      cursor: pointer;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.15);
-      transition: transform 0.15s ease, background 0.2s ease;
-      backdrop-filter: blur(4px);
-      -webkit-backdrop-filter: blur(4px);
-    }
-    #darkToggle:hover { transform: translateY(-4px); }
-    #darkToggle:focus-visible { outline: 2px solid rgba(255,255,255,0.12); outline-offset: 3px; }
+    /* close */
+    #modalCloseBtn { position:absolute; top:12px; right:12px; background:transparent; border:none; font-size:22px;
+      color:var(--accent-1); cursor:pointer; font-weight:700; line-height:1; padding:4px 8px; border-radius:8px;
+      transition:background-color .2s ease; }
+    #modalCloseBtn:hover, #modalCloseBtn:focus{ background:var(--accent-1); color:#fff; outline:none; }
   </style>
 </head>
 <body>
 
-  <!-- BACK BUTTON -->
   <a href="../index.html" class="back-box" aria-label="Kthehu mbrapa">&#8592;</a>
 
   <header>
@@ -244,115 +170,183 @@
     <a href="#morfologjia">Morfologjia</a>
     <a href="#sintaksa">Sintaksa</a>
     <a href="#leksiku">Leksiku</a>
-    <a href="#fonetika">Fonetika</a>
-    <a href="#historia">Historia</a>
     <a href="#Tekstijoletrar">Teksti joletrar</a>
-    <a href="#Drejtshkrimidhepikesimi">Drejtshkrim & pikësim</a>
+    <a href="#Drejtshkrimidhepikesimi">Drejtshkrimi & pikësimi</a>
   </nav>
 
   <main class="container" role="main">
-    <article class="card" id="morfologjia" aria-labelledby="morfologjia-title">
+    <!-- MORFOLOGJIA -->
+    <article class="card" id="morfologjia" aria-labelledby="morfologjia-title" tabindex="0">
       <h2 id="morfologjia-title">Morfologjia</h2>
-      <p>Morfologjia studion format gramatikore të fjalëve dhe mënyrën se si ato ndërtohen e ndryshojnë. Kjo përfshin lakimin, zgjedhimin dhe fjalëformimin.</p>
+      <p>Morfologjia studion format gramatikore të fjalëve dhe mënyrën se si ato ndërtohen e ndryshojnë.</p>
+
+      <!-- EDIT POPUP TEXT HERE (hidden) -->
+     <div class="card-content" style="display:none">
+    <p>
+        <a href="#"><strong>Fjalëformimi</strong></a><br>
+        <a href="#">Emri</a><br>
+        <a href="#">Mbiemri</a><br>
+        <a href="#">Folja</a><br>
+        <a href="#">Përemri</a><br>
+        <a href="#">Parafjala</a><br>
+        <a href="#">Numërori</a><br>
+        <a href="#">Ndajfolja</a><br>
+        <a href="#">Lidhëza</a><br>
+        <a href="#">Pasthirrma</a><br>
+        <a href="#">Pjesëza</a>
+    </p>
+</div>
+
     </article>
 
-    <article class="card" id="sintaksa" aria-labelledby="sintaksa-title">
+    <!-- SINTAKSA -->
+    <article class="card" id="sintaksa" aria-labelledby="sintaksa-title" tabindex="0">
       <h2 id="sintaksa-title">Sintaksa</h2>
-      <p>Sintaksa analizon ndërtimin e fjalisë dhe marrëdhëniet midis pjesëve të saj. Ajo përcakton rregullat e bashkërendimit të fjalëve në fjalitë shqipe.</p>
+      <p>Sintaksa analizon ndërtimin e fjalisë dhe marrëdhëniet midis pjesëve të saj.</p>
+
+      <div class="card-content" style="display:none">
+        <a href="#">Kryefjala</a><br>
+        <a href="#">Kallëzuesi</a><br>
+        <a href="#">Kundrinori</a><br>
+        <a href="#">Përcaktori</a><br>
+        <a href="#">Përcaktori kallzuesor</a><br>
+        <a href="#">Ndajshtimi</a><br>
+        <a href="#">Rrethanori</a><br>
+        <a href="#">Gjymtyrët homogjene</a><br>
+        <a href="#">Fjalia e thjeshtë dhe fjalia e përbërë</a><br>
+        <a href="#">Fjalia e përbërë me bashkërenditje/nënrendtije</a>
+      </div>
     </article>
 
-    <article class="card" id="leksiku" aria-labelledby="leksiku-title">
+    <!-- LEKSIKU -->
+    <article class="card" id="leksiku" aria-labelledby="leksiku-title" tabindex="0">
       <h2 id="leksiku-title">Leksiku</h2>
-      <p>Leksiku përfshin fjalorin e gjuhës shqipe. Ai përbëhet nga fjalë vendase dhe huazime, dhe është pasuruar në mënyrë të vazhdueshme nëpër shekuj.</p>
+      <p>Leksiku përfshin fjalorin e gjuhës shqipe.</p>
+
+      <div class="card-content" style="display:none">
+        <p>
+        <a href="#">Ligjërimet në gjuhën shqipe</a><br>
+        <a href="#">Stilet funksionale në gjuhën shqipe</a><br></p>
+      </div>
     </article>
 
-    <article class="card" id="fonetika" aria-labelledby="fonetika-title">
-      <h2 id="fonetika-title">Fonetika</h2>
-      <p>Fonetika shqyrton tingujt e shqipes, artikulimin e tyre dhe ndryshimet fonologjike në dialekte të ndryshme.</p>
-    </article>
-
-    <article class="card" id="historia" aria-labelledby="historia-title">
-      <h2 id="historia-title">Historia e Gjuhës</h2>
-      <p>Gjuha shqipe është ndër më të vjetrat në Evropë, me rrënjë ilire. Ajo ka kaluar nëpër procese evolutive që nga dokumentet e para të shkruara në shek. XV.</p>
-    </article>
-
-    <article class="card" id="Tekstijoletrar" aria-labelledby="tekst-title">
+    <!-- TEKSTI JOLETAR -->
+    <article class="card" id="Tekstijoletrar" aria-labelledby="tekst-title" tabindex="0">
       <h2 id="tekst-title">Teksti joletrar</h2>
-      <p>Teksti joletrar është një tekst që ka për qëllim të informojë, shpjegojë ose argumentojë, dhe jo të tregojë një histori ose të ngjallë emocione artistike. Ai përdoret zakonisht në lajme, ese, manuale, ligje, raporte shkencore, etj.</p>
+      <p>Teksti joletrar përdoret për funksione pragmatike.</p>
+
+      <div class="card-content" style="display:none">
+        <p>
+        <a href="#">Teksti përshkrues</a><br>
+        <a href="#">Teksti rrëfyes</a><br>
+        <a href="#">Teksti argumentues</a><br>
+        <a href="#">Teksti informues</a><br>
+        </p>
+      </div>
     </article>
 
-    <article class="card" id="Drejtshkrimidhepikesimi" aria-labelledby="drejt-title">
+    <!-- DREJTSHKRIMI & PIKËSIMI -->
+    <article class="card" id="Drejtshkrimidhepikesimi" aria-labelledby="drejt-title" tabindex="0">
       <h2 id="drejt-title">Drejtshkrimi dhe pikësimi</h2>
-      <p>Drejtshkrimi është mënyra e saktë e të shkruarit të fjalëve sipas rregullave të gjuhës. Pikësimi është përdorimi i shenjave (si pika, presja, pikëpyetja) për të ndarë dhe qartësuar fjalitë.</p>
+      <p>Drejtshkrimi dhe pikësimi sjellin qartësi në shkrim.</p>
+
+      <div class="card-content" style="display:none">
+        <p>Drejtshkrimi përcakton formën e saktë të fjalëve; pikësimi ndihmon në ndarjen e fjalive për të shmangur keqkuptimet.</p>
+      </div>
     </article>
   </main>
 
-  <footer>
-    © 2025 Projekti Gjuha Shqipe | Të gjitha të drejtat e rezervuara.
-  </footer>
+  <footer>© 2025 Projekti Gjuha Shqipe | Të gjitha të drejtat e rezervuara.</footer>
 
-  <!-- Floating dark mode toggle -->
+  <!-- Modal (read-only) -->
+  <div id="modalBackdrop" role="dialog" aria-modal="true" aria-labelledby="modalTitle" tabindex="-1">
+    <div id="modalBox">
+      <button id="modalCloseBtn" aria-label="Mbyll modalin">&times;</button>
+      <h2 id="modalTitle"></h2>
+      <div id="modalContent"></div>
+    </div>
+  </div>
+
   <button id="darkToggle" aria-label="Ndrysho modalitetin dritë/errësirë" title="Toggle dark mode">🌙</button>
 
   <script>
-    // Dark Mode Detection + Toggle + remember in localStorage
+    // Dark Mode (unchanged)
     const toggleBtn = document.getElementById('darkToggle');
-    const savedTheme = localStorage.getItem('theme'); // 'dark-mode' or 'light-mode'
+    const savedTheme = localStorage.getItem('theme');
 
     function applyTheme(themeClass) {
-      document.body.classList.remove('dark-mode', 'light-mode');
+      document.body.classList.remove('dark-mode','light-mode');
       if (themeClass) document.body.classList.add(themeClass);
       updateToggleIcon();
     }
-
-    // update floating button icon depending on current theme
     function updateToggleIcon() {
-      const isDark = document.body.classList.contains('dark-mode') ||
-        (!document.body.classList.contains('light-mode') && window.matchMedia('(prefers-color-scheme: dark)').matches && !localStorage.getItem('theme'));
-      // if explicit light-mode is set, isDark false
+      const explicit = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const isDark = document.body.classList.contains('dark-mode') || (!document.body.classList.contains('light-mode') && !explicit && prefersDark);
       toggleBtn.textContent = isDark ? '☀️' : '🌙';
     }
-
-    // Initial load: saved preference overrides system preference
-    if (savedTheme === 'dark-mode' || savedTheme === 'light-mode') {
-      applyTheme(savedTheme);
-    } else {
-      // no saved preference -> follow system
-      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        applyTheme('dark-mode');
-      } else {
-        applyTheme('light-mode');
-      }
-    }
-
-    // Listen for system preference changes (only if user hasn't chosen)
+    if (savedTheme === 'dark-mode' || savedTheme === 'light-mode') applyTheme(savedTheme);
+    else applyTheme(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark-mode' : 'light-mode');
     if (!savedTheme && window.matchMedia) {
-      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
-        applyTheme(e.matches ? 'dark-mode' : 'light-mode');
-      });
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => applyTheme(e.matches ? 'dark-mode' : 'light-mode'));
     }
-
-    // Toggle on click (and save user preference)
     toggleBtn.addEventListener('click', () => {
-      if (document.body.classList.contains('dark-mode')) {
-        applyTheme('light-mode');
-        localStorage.setItem('theme', 'light-mode');
-      } else {
-        applyTheme('dark-mode');
-        localStorage.setItem('theme', 'dark-mode');
-      }
+      if (document.body.classList.contains('dark-mode')) { applyTheme('light-mode'); localStorage.setItem('theme','light-mode'); }
+      else { applyTheme('dark-mode'); localStorage.setItem('theme','dark-mode'); }
     });
-
-    // Accessibility: allow toggle with keyboard (Enter/Space)
-    toggleBtn.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        toggleBtn.click();
-      }
-    });
-
-    // Optional: update toggle icon on page load (safety)
+    toggleBtn.addEventListener('keydown', e => { if (e.key==='Enter'||e.key===' ') { e.preventDefault(); toggleBtn.click(); }});
     updateToggleIcon();
+
+    /* MODAL LOGIC (read-only content from .card-content) */
+    (function () {
+      const modalBackdrop = document.getElementById('modalBackdrop');
+      const modalBox = document.getElementById('modalBox');
+      const modalCloseBtn = document.getElementById('modalCloseBtn');
+      const modalTitle = document.getElementById('modalTitle');
+      const modalContent = document.getElementById('modalContent');
+      const cards = document.querySelectorAll('.card');
+      let lastFocused = null;
+
+      function openModal(card) {
+        lastFocused = document.activeElement;
+        const titleEl = card.querySelector('h2');
+        modalTitle.textContent = titleEl ? titleEl.textContent : '';
+
+        const rich = card.querySelector('.card-content');
+        if (rich) modalContent.innerHTML = rich.innerHTML;
+        else if (card.dataset && card.dataset.content) modalContent.innerHTML = card.dataset.content;
+        else modalContent.textContent = '';
+
+        modalBackdrop.style.display = 'flex';
+        modalBox.style.display = 'block';
+        document.documentElement.style.overflow = 'hidden';
+        document.body.style.overflow = 'hidden';
+        modalCloseBtn.focus();
+      }
+
+      function closeModal() {
+        modalBackdrop.style.display = 'none';
+        modalBox.style.display = 'none';
+        document.documentElement.style.overflow = '';
+        document.body.style.overflow = '';
+        if (lastFocused && typeof lastFocused.focus === 'function') lastFocused.focus();
+      }
+
+      cards.forEach(card => {
+        card.addEventListener('click', () => openModal(card));
+        card.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModal(card); }
+        });
+      });
+
+      modalCloseBtn.addEventListener('click', closeModal);
+      modalBackdrop.addEventListener('click', (e) => { if (e.target === modalBackdrop) closeModal(); });
+      window.addEventListener('keydown', (e) => { if (e.key === 'Escape' && modalBackdrop.style.display === 'flex') closeModal(); });
+
+      // hide initially
+      modalBackdrop.style.display = 'none';
+      modalBox.style.display = 'none';
+    })();
   </script>
 </body>
 </html>
