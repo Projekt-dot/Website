@@ -20,8 +20,6 @@
     }
 
     header {
-      top: 0;
-      z-index: 10;
       text-align: center;
       color: white;
       font-size: 2.5em;
@@ -47,15 +45,9 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      transition: background-color 0.2s ease;
       z-index: 999;
     }
 
-    .back-button:hover {
-      background-color: #cfcfcf;
-    }
-
-    /* Responsive Grid */
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -82,12 +74,9 @@
     }
 
     .book-link {
-      position: absolute;
-      top: 0;
-      left: 0;
+      display: block;
       width: 100%;
       height: 100%;
-      z-index: 20;
       text-decoration: none;
       color: inherit;
     }
@@ -124,90 +113,92 @@
       background: white;
       transform-origin: left center;
       border-radius: 5px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
       transition: transform 1s ease-in-out;
     }
 
     .page:nth-child(1) { z-index: 9; }
-    .book:hover .page:nth-child(1) { transform: rotateY(-20deg); }
-
     .page:nth-child(2) { z-index: 8; }
-    .book:hover .page:nth-child(2) { transform: rotateY(-15deg); }
-
     .page:nth-child(3) { z-index: 7; }
-    .book:hover .page:nth-child(3) { transform: rotateY(-10deg); }
-
     .page:nth-child(4) { z-index: 6; }
-    .book:hover .page:nth-child(4) { transform: rotateY(-5deg); }
-
     .page:nth-child(5) { z-index: 5; }
-    .book:hover .page:nth-child(5) { transform: rotateY(-2deg); }
 
-    .page-content {
-      padding: 10px;
-      font-size: 14px;
-      color: #333;
-      text-align: center;
-    }
+    .book:hover .page:nth-child(1) { transform: rotateY(-20deg); }
+    .book:hover .page:nth-child(2) { transform: rotateY(-15deg); }
+    .book:hover .page:nth-child(3) { transform: rotateY(-10deg); }
+    .book:hover .page:nth-child(4) { transform: rotateY(-5deg); }
+    .book:hover .page:nth-child(5) { transform: rotateY(-2deg); }
   </style>
 </head>
+
 <body>
-  <a href="../index.html" class="back-button">&#8592;</a>
 
-  <header>
-    <h2>Biblioteka Virtuale</h2>
-  </header>
+<a href="../index.html" class="back-button">&#8592;</a>
 
-  <div class="grid">
+<header>
+  <h2>Biblioteka Virtuale</h2>
+</header>
 
-    <!-- Book 1 -->
-    <div class="book">
-      <a href="../LIBRI-XHA-GORIO-KODET/BALZAK.html" class="book-link">
-      <div class="cover" style="background-image: url('https://raw.githubusercontent.com/Projekt-dot/Website/main/fotot%20faqet%201-3/Xha%20Gorio-Kopertina.jpg');">
-        </a>
-      </div>
-      <div class="pages">
-        <div class="page"></div><div class="page"></div><div class="page"></div><div class="page"></div><div class="page"></div>
-      </div>
-    </div>
-    
+<div class="grid">
 
-    <!-- Book 2 -->
-    <div class="book">
-      <div class="cover" style="background-image: url('https://raw.githubusercontent.com/Projekt-dot/Website/main/fotot%20faqet%201-3/ShokuZylo-Kopertina.jpg');"></div>
-      <div class="pages">
-        <div class="page"></div><div class="page"></div><div class="page"></div><div class="page"></div><div class="page"></div>
-      </div>
-    </div>
+  <!-- Xha Gorio -->
+  <div class="book">
+    <a href="../LIBRI-XHA-GORIO-KODET/BALZAK.html" class="book-link">
+      <div class="cover" style="background-image:url('https://raw.githubusercontent.com/Projekt-dot/Website/main/fotot%20faqet%201-3/Xha%20Gorio-Kopertina.jpg')"></div>
+      <div class="pages"><div class="page"></div><div class="page"></div><div class="page"></div><div class="page"></div><div class="page"></div></div>
+    </a>
+  </div>
 
-    <!-- Book 3 -->
-    <div class="book">
-      <div class="cover" style="background-image: url('https://raw.githubusercontent.com/Projekt-dot/Website/main/fotot%20faqet%201-3/Prometeu-Kopertina.jpg');"></div>
-      <div class="pages">
-        <div class="page"></div><div class="page"></div><div class="page"></div><div class="page"></div><div class="page"></div>
-      </div>
-    </div>
+  <!-- Shoku Zylo -->
+  <div class="book"><div class="cover" style="background-image:url('https://raw.githubusercontent.com/Projekt-dot/Website/main/fotot%20faqet%201-3/ShokuZylo-Kopertina.jpg')"></div><div class="pages"><div class="page"></div><div class="page"></div><div class="page"></div><div class="page"></div><div class="page"></div></div></div>
 
-    <!-- Continue the same structure for all other books... -->
-    <div class="book"><div class="cover" style="background-image: url('https://raw.githubusercontent.com/Projekt-dot/Website/main/fotot%20faqet%201-3/PallatiIEndrrave-Kopertina.jpg');"></div><div class="pages"><div class="page"></div><div class="page"></div><div class="page"></div><div class="page"></div><div class="page"></div></div></div>
-    <div class="book"><div class="cover" style="background-image: url('https://raw.githubusercontent.com/Projekt-dot/Website/main/fotot%20faqet%201-3/Migjeni-Kopertina.jpg');"></div><div class="pages"><div class="page"></div><div class="page"></div><div class="page"></div><div class="page"></div><div class="page"></div></div></div>
-    <div class="book"><div class="cover" style="background-image: url('https://raw.githubusercontent.com/Projekt-dot/Website/main/fotot%20faqet%201-3/Metamorfoza-Kopertina.jpg');"></div><div class="pages"><div class="page"></div><div class="page"></div><div class="page"></div><div class="page"></div><div class="page"></div></div></div>
-    <div class="book"><div class="cover" style="background-image: url('https://raw.githubusercontent.com/Projekt-dot/Website/main/fotot%20faqet%201-3/LuletEVeres-Kopertina.jpg');"></div><div class="pages"><div class="page"></div><div class="page"></div><div class="page"></div><div class="page"></div><div class="page"></div></div></div>
-    <div class="book"><div class="cover" style="background-image: url('https://raw.githubusercontent.com/Projekt-dot/Website/main/fotot%20faqet%201-3/LirikeneShi-Kopertina.jpg');"></div><div class="pages"><div class="page"></div><div class="page"></div><div class="page"></div><div class="page"></div><div class="page"></div></div></div>
-    <div class="book"><div class="cover" style="background-image: url('https://raw.githubusercontent.com/Projekt-dot/Website/main/fotot%20faqet%201-3/Cikli%20i%20Kreshnikeve-Kopertina.jpg');"></div><div class="pages"><div class="page"></div><div class="page"></div><div class="page"></div><div class="page"></div><div class="page"></div></div></div>
-    <div class="book"><div class="cover" style="background-image: url('https://raw.githubusercontent.com/Projekt-dot/Website/main/fotot%20faqet%201-3/KomediaHyjnore-Dante%20Aligeri.jpg');"></div><div class="pages"><div class="page"></div><div class="page"></div><div class="page"></div><div class="page"></div><div class="page"></div></div></div>
-    <div class="book"><div class="cover" style="background-image: url('https://raw.githubusercontent.com/Projekt-dot/Website/main/fotot%20faqet%201-3/KengeteMilosaos-Kopertina.jpg');"></div><div class="pages"><div class="page"></div><div class="page"></div><div class="page"></div><div class="page"></div><div class="page"></div></div></div>
-    <div class="book"><div class="cover" style="background-image: url('https://raw.githubusercontent.com/Projekt-dot/Website/main/fotot%20faqet%201-3/Katedralia-Kopertina.jpg');"></div><div class="pages"><div class="page"></div><div class="page"></div><div class="page"></div><div class="page"></div><div class="page"></div></div></div>
-   
+  <!-- Prometeu -->
+  <div class="book"><div class="cover" style="background-image:url('https://raw.githubusercontent.com/Projekt-dot/Website/main/fotot%20faqet%201-3/Prometeu-Kopertina.jpg')"></div><div class="pages"><div class="page"></div><div class="page"></div><div class="page"></div><div class="page"></div><div class="page"></div></div></div>
+
+  <!-- Pallati i Endrrave -->
+  <div class="book"><div class="cover" style="background-image:url('https://raw.githubusercontent.com/Projekt-dot/Website/main/fotot%20faqet%201-3/PallatiIEndrrave-Kopertina.jpg')"></div><div class="pages"><div class="page"></div><div class="page"></div><div class="page"></div><div class="page"></div><div class="page"></div></div></div>
+
+  <!-- Migjeni -->
+  <div class="book"><div class="cover" style="background-image:url('https://raw.githubusercontent.com/Projekt-dot/Website/main/fotot%20faqet%201-3/Migjeni-Kopertina.jpg')"></div><div class="pages"><div class="page"></div><div class="page"></div><div class="page"></div><div class="page"></div><div class="page"></div></div></div>
+
+  <!-- Metamorfoza -->
+  <div class="book"><div class="cover" style="background-image:url('https://raw.githubusercontent.com/Projekt-dot/Website/main/fotot%20faqet%201-3/Metamorfoza-Kopertina.jpg')"></div><div class="pages"><div class="page"></div><div class="page"></div><div class="page"></div><div class="page"></div><div class="page"></div></div></div>
+
+  <!-- Lulet e Veres -->
+  <div class="book"><div class="cover" style="background-image:url('https://raw.githubusercontent.com/Projekt-dot/Website/main/fotot%20faqet%201-3/LuletEVeres-Kopertina.jpg')"></div><div class="pages"><div class="page"></div><div class="page"></div><div class="page"></div><div class="page"></div><div class="page"></div></div></div>
+
+  <!-- Lirikene Shi -->
+  <div class="book"><div class="cover" style="background-image:url('https://raw.githubusercontent.com/Projekt-dot/Website/main/fotot%20faqet%201-3/LirikeneShi-Kopertina.jpg')"></div><div class="pages"><div class="page"></div><div class="page"></div><div class="page"></div><div class="page"></div><div class="page"></div></div></div>
+
+  <!-- Cikli i Kreshnikeve -->
+  <div class="book"><div class="cover" style="background-image:url('https://raw.githubusercontent.com/Projekt-dot/Website/main/fotot%20faqet%201-3/Cikli%20i%20Kreshnikeve-Kopertina.jpg')"></div><div class="pages"><div class="page"></div><div class="page"></div><div class="page"></div><div class="page"></div><div class="page"></div></div></div>
+
+  <!-- Komedia Hyjnore -->
+  <div class="book"><div class="cover" style="background-image:url('https://raw.githubusercontent.com/Projekt-dot/Website/main/fotot%20faqet%201-3/KomediaHyjnore-Dante%20Aligeri.jpg')"></div><div class="pages"><div class="page"></div><div class="page"></div><div class="page"></div><div class="page"></div><div class="page"></div></div></div>
+
+  <!-- Këngët e Milosaos -->
+  <div class="book"><div class="cover" style="background-image:url('https://raw.githubusercontent.com/Projekt-dot/Website/main/fotot%20faqet%201-3/KengeteMilosaos-Kopertina.jpg')"></div><div class="pages"><div class="page"></div><div class="page"></div><div class="page"></div><div class="page"></div><div class="page"></div></div></div>
+
+  <!-- Katedralia -->
+  <div class="book"><div class="cover" style="background-image:url('https://raw.githubusercontent.com/Projekt-dot/Website/main/fotot%20faqet%201-3/Katedralia-Kopertina.jpg')"></div><div class="pages"><div class="page"></div><div class="page"></div><div class="page"></div><div class="page"></div><div class="page"></div></div></div>
+
+  <!-- Ylli i Zemres -->
   <div class="book">
     <a href="YLLIIZEMRES.html" class="book-link">
-    <div class="cover" style="background-image: url('https://raw.githubusercontent.com/Projekt-dot/Website/main/fotot%20faqet%201-3/YlliiZemres-Kopertina.jpg');"></div><div class="pages"><div class="page"></div><div class="page"></div><div class="page"></div><div class="page"></div><div class="page"></div></div></div>
-    
-  <div class="book"><div class="cover" style="background-image: url('https://raw.githubusercontent.com/Projekt-dot/Website/main/fotot%20faqet%201-3/Iliada-Kopertina.jpg');"></div><div class="pages"><div class="page"></div><div class="page"></div><div class="page"></div><div class="page"></div><div class="page"></div></div></div>
-    <div class="book"><div class="cover" style="background-image: url('https://raw.githubusercontent.com/Projekt-dot/Website/main/fotot%20faqet%201-3/Hamleti-Kopertina.jpg');"></div><div class="pages"><div class="page"></div><div class="page"></div><div class="page"></div><div class="page"></div><div class="page"></div></div></div>
-    <div class="book"><div class="cover" style="background-image: url('https://raw.githubusercontent.com/Projekt-dot/Website/main/fotot%20faqet%201-3/Fausti-Kopertina.jpg');"></div><div class="pages"><div class="page"></div><div class="page"></div><div class="page"></div><div class="page"></div><div class="page"></div></div></div>
-
+      <div class="cover" style="background-image:url('https://raw.githubusercontent.com/Projekt-dot/Website/main/fotot%20faqet%201-3/YlliiZemres-Kopertina.jpg')"></div>
+      <div class="pages"><div class="page"></div><div class="page"></div><div class="page"></div><div class="page"></div><div class="page"></div></div>
+    </a>
   </div>
+
+  <!-- Iliada -->
+  <div class="book"><div class="cover" style="background-image:url('https://raw.githubusercontent.com/Projekt-dot/Website/main/fotot%20faqet%201-3/Iliada-Kopertina.jpg')"></div><div class="pages"><div class="page"></div><div class="page"></div><div class="page"></div><div class="page"></div><div class="page"></div></div></div>
+
+  <!-- Hamleti -->
+  <div class="book"><div class="cover" style="background-image:url('https://raw.githubusercontent.com/Projekt-dot/Website/main/fotot%20faqet%201-3/Hamleti-Kopertina.jpg')"></div><div class="pages"><div class="page"></div><div class="page"></div><div class="page"></div><div class="page"></div><div class="page"></div></div></div>
+
+  <!-- Fausti -->
+  <div class="book"><div class="cover" style="background-image:url('https://raw.githubusercontent.com/Projekt-dot/Website/main/fotot%20faqet%201-3/Fausti-Kopertina.jpg')"></div><div class="pages"><div class="page"></div><div class="page"></div><div class="page"></div><div class="page"></div><div class="page"></div></div></div>
+
+</div>
 </body>
 </html>
-
